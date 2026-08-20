@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SKILLPACK — Skills for Bankr Agents</title>
+  <meta name="description" content="10 ready-to-install skills for Bankr agents on Base + Robinhood Chain. Bridge, launch, fees, stocks, automation & self-funding agents." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="icon" href="https://iili.io/CQYSsb2.md.png" />
+  <style>
+    :root {
+      --bg: #09090b;
+      --card: #18181b;
+      --card-hover: #1f1f23;
+      --border: #27272a;
+      --text: #fafafa;
+      --muted: #a1a1aa;
+      --accent: #f4f4f5;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 20px 100px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .logo-wrap {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 24px;
+      background: #fff;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.08);
+    }
+
+    .logo {
+      width: 64px;
+      height: 64px;
+    }
+
+    h1 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 28px;
+    }
+
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 11px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      border-radius: 999px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      letter-spacing: 0.01em;
+    }
+
+    .badge.blue { color: #93c5fd; border-color: #1e3a5f; }
+    .badge.green { color: #86efac; border-color: #14532d; }
+    .badge.purple { color: #d8b4fe; border-color: #4c1d95; }
+    .badge.yellow { color: #fde047; border-color: #713f12; }
+
+    .socials {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .socials a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .socials a:hover { color: var(--text); }
+
+    section { margin-bottom: 48px; }
+
+    h2 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+
+    p { color: var(--muted); margin-bottom: 12px; }
+
+    ul {
+      list-style: none;
+      color: var(--muted);
+    }
+
+    ul li {
+      padding: 5px 0 5px 18px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--text);
+      font-size: 0.85rem;
+    }
+
+    .code-row {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      margin: 10px 0 22px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .code-block {
+      flex: 1;
+      padding: 14px 16px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.8rem;
+      color: #e4e4e7;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .copy-btn {
+      flex-shrink: 0;
+      background: transparent;
+      border: none;
+      border-left: 1px solid var(--border);
+      color: var(--muted);
+      padding: 0 16px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .copy-btn:hover {
+      background: var(--card-hover);
+      color: var(--text);
+    }
+
+    .copy-btn.copied {
+      color: #86efac;
+    }
+
+    .skill-label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .skill-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .skill-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      transition: border-color 0.15s;
+    }
+
+    .skill-item:hover {
+      border-color: #3f3f46;
+    }
+
+    .skill-item strong {
+      display: block;
+      font-size: 0.92rem;
+      margin-bottom: 3px;
+    }
+
+    .skill-item span {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .order-list {
+      color: var(--muted);
+      padding-left: 22px;
+    }
+
+    .order-list li {
+      padding: 4px 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 64px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 1.7rem; }
+      .container { padding: 32px 16px 80px; }
+      .code-block { font-size: 0.72rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-wrap">
+        <img src="https://iili.io/CQYSsb2.md.png" alt="SKILLPACK" class="logo" />
+      </div>
+      <h1>SKILLPACK</h1>
+      <p class="tagline">Skills for Bankr agents on Base + Robinhood Chain</p>
+
+      <div class="badges">
+        <span class="badge blue">10 Skills</span>
+        <span class="badge green">MIT License</span>
+        <span class="badge purple">Bankr Compatible</span>
+        <span class="badge">Base</span>
+        <span class="badge yellow">Robinhood Chain</span>
+      </div>
+
+      <div class="socials">
+        <a href="https://github.com/skillpackbot/SKILLPACK" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://x.com/skillpackbot" target="_blank" rel="noopener">@skillpackbot</a>
+        <a href="https://bankr.bot" target="_blank" rel="noopener">Bankr</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>What is SKILLPACK?</h2>
+      <p>A collection of ready-to-install skills for Bankr agents operating on Base and Robinhood Chain.</p>
+      <ul>
+        <li>Bridge tokens between Base ↔ Robinhood Chain</li>
+        <li>Fair-launch tokens and earn creator fees</li>
+        <li>Trade tokenized stocks</li>
+        <li>Run automation (DCA, TWAP, limit, stop-loss)</li>
+        <li>Stay self-funding through trading fees</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Install all skills</h2>
+      <div class="code-row">
+        <div class="code-block" id="cmd-all">install all skills from https://github.com/skillpackbot/SKILLPACK</div>
+        <button class="copy-btn" onclick="copyCmd('cmd-all', this)">Copy</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Install individual skills</h2>
+
+      <div class="skill-label">skillpack-bridge</div>
+      <div class="code-row">
+        <div class="code-block" id="cmd-bridge">install the skillpack-bridge skill from https://github.com/skillpackbot/SKILLPACK/tree/main/skillpack-bridge</div>
+        <button class="copy-btn" onclick="copyCmd('cmd-bridge', this)">Copy</button>
+      </div>
+
+      <div class="skill-label">skillpack-launch</div>
+      <div class="code-row">
+        <div class="code-block" id="cmd-launch">install the skillpack-launch skill from https://github.com/skillpackbot/SKILLPACK/tree/main/skillpack-launch</div>
+        <button class="copy-btn" onclick="copyCmd('cmd-launch', this)">Copy</button>
+      </div>
+
+      <div class="skill-label">skillpack-fee</div>
+      <div class="code-row">
+        <div class="code-block" id="cmd-fee">install the skillpack-fee skill from https://github.com/skillpackbot/SKILLPACK/tree/main/skillpack-fee</div>
+        <button class="copy-btn" onclick="copyCmd('cmd-fee', this)">Copy</button>
+      </div>
+
+      <div class="skill-label">skillpack-stock</div>
+      <div class="code-row">
+        <div class="code-block" id="cmd-stock">install the skillpack-stock skill from https://github.com/skillpackbot/SKILLPACK/tree/main/skillpack-stock</div>
+        <button class="copy-btn" onclick="copyCmd('cmd-stock', this)">Copy</button>
+      </div>
+
+      <div class="skill-label">skillpack-arb</div>
+      <div class="code-row">
+        <div class="code-block" id="cmd-arb">install the skillpack-arb skill from https://github.com/skillpackbot/SKILLPACK/tree/main/skillpack-arb</div>
+        <button class="copy-btn" onclick="copyCmd('cmd-arb', this)">Copy</button>
+      </div>
+
+      <div class="skill-label">skillpack-agent</div>
+      <div class="code-row">
+        <div class="code-block" id="cmd-agent">install the skillpack-agent skill from https://github.com/skillpackbot/SKILLPACK/tree/main/skillpack-agent</div>
+        <button class="copy-btn" onclick="copyCmd('cmd-agent', this)">Copy</button>
+      </div>
+
+      <div class="skill-label">skillpack-alpha</div>
+      <div class="code-row">
+        <div class="code-block" id="cmd-alpha">install the skillpack-alpha skill from https://github.com/skillpackbot/SKILLPACK/tree/main/skillpack-alpha</div>
+        <button class="copy-btn" onclick="copyCmd('cmd-alpha', this)">Copy</button>
+      </div>
+
+      <div class="skill-label">skillpack-auto</div>
+      <div class="code-row">
+        <div class="code-block" id="cmd-auto">install the skillpack-auto skill from https://github.com/skillpackbot/SKILLPACK/tree/main/skillpack-auto</div>
+        <button class="copy-btn" onclick="copyCmd('cmd-auto', this)">Copy</button>
+      </div>
+
+      <div class="skill-label">skillpack-portfolio</div>
+      <div class="code-row">
+        <div class="code-block" id="cmd-portfolio">install the skillpack-portfolio skill from https://github.com/skillpackbot/SKILLPACK/tree/main/skillpack-portfolio</div>
+        <button class="copy-btn" onclick="copyCmd('cmd-portfolio', this)">Copy</button>
+      </div>
+
+      <div class="skill-label">skillpack-x402</div>
+      <div class="code-row">
+        <div class="code-block" id="cmd-x402">install the skillpack-x402 skill from https://github.com/skillpackbot/SKILLPACK/tree/main/skillpack-x402</div>
+        <button class="copy-btn" onclick="copyCmd('cmd-x402', this)">Copy</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Skills Overview</h2>
+      <div class="skill-list">
+        <div class="skill-item">
+          <strong>skillpack-bridge</strong>
+          <span>Bridge tokens Base ↔ Robinhood via LayerZero OFT + seed liquidity</span>
+        </div>
+        <div class="skill-item">
+          <strong>skillpack-launch</strong>
+          <span>Fair-launch tokens on Base or Robinhood with fee sharing</span>
+        </div>
+        <div class="skill-item">
+          <strong>skillpack-fee</strong>
+          <span>Track, claim & report creator fees</span>
+        </div>
+        <div class="skill-item">
+          <strong>skillpack-stock</strong>
+          <span>Trade tokenized stocks (NVDA, AAPL, META, etc.)</span>
+        </div>
+        <div class="skill-item">
+          <strong>skillpack-arb</strong>
+          <span>Find & act on price differences between Base and Robinhood</span>
+        </div>
+        <div class="skill-item">
+          <strong>skillpack-agent</strong>
+          <span>Full self-sustaining agent workflow (launch → fees → compute)</span>
+        </div>
+        <div class="skill-item">
+          <strong>skillpack-alpha</strong>
+          <span>Research & alpha scanner for new tokens and stock tokens</span>
+        </div>
+        <div class="skill-item">
+          <strong>skillpack-auto</strong>
+          <span>DCA, TWAP, limit orders, stop-loss</span>
+        </div>
+        <div class="skill-item">
+          <strong>skillpack-portfolio</strong>
+          <span>Multi-chain portfolio + PnL tracker</span>
+        </div>
+        <div class="skill-item">
+          <strong>skillpack-x402</strong>
+          <span>x402 payment helpers for paid features & tips</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Recommended Order</h2>
+      <ol class="order-list">
+        <li>skillpack-bridge</li>
+        <li>skillpack-launch</li>
+        <li>skillpack-fee</li>
+        <li>skillpack-stock</li>
+        <li>skillpack-agent</li>
+        <li>skillpack-auto</li>
+        <li>skillpack-arb</li>
+        <li>skillpack-alpha</li>
+        <li>skillpack-portfolio</li>
+        <li>skillpack-x402</li>
+      </ol>
+    </section>
+
+    <footer>
+      <p>MIT License · Made for the Bankr ecosystem</p>
+      <p style="margin-top:8px">
+        <a href="https://github.com/skillpackbot/SKILLPACK" target="_blank" rel="noopener">github.com/skillpackbot/SKILLPACK</a>
+        ·
+        <a href="https://x.com/skillpackbot" target="_blank" rel="noopener">@skillpackbot</a>
+      </p>
+    </footer>
+  </div>
+
+  <script>
+    function copyCmd(id, btn) {
+      const text = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = "Copied!";
+        btn.classList.add("copied");
+        setTimeout(() => {
+          btn.textContent = "Copy";
+          btn.classList.remove("copied");
+        }, 1600);
+      }).catch(() => {
+        // fallback
+        const range = document.createRange();
+        range.selectNode(document.getElementById(id));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();
+        btn.textContent = "Copied!";
+        setTimeout(() => btn.textContent = "Copy", 1600);
+      });
+    }
+  </script>
+</body>
+          </html>
