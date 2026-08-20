@@ -41,16 +41,54 @@ install all skills from https://github.com/skillpackbot/SKILLPACK
 ```
 
 ### Install individual skills
+
+**skillpack-bridge**
 ```
 install the skillpack-bridge skill from https://github.com/skillpackbot/SKILLPACK/tree/main/skillpack-bridge
+```
+
+**skillpack-launch**
+```
 install the skillpack-launch skill from https://github.com/skillpackbot/SKILLPACK/tree/main/skillpack-launch
+```
+
+**skillpack-fee**
+```
 install the skillpack-fee skill from https://github.com/skillpackbot/SKILLPACK/tree/main/skillpack-fee
+```
+
+**skillpack-stock**
+```
 install the skillpack-stock skill from https://github.com/skillpackbot/SKILLPACK/tree/main/skillpack-stock
+```
+
+**skillpack-arb**
+```
 install the skillpack-arb skill from https://github.com/skillpackbot/SKILLPACK/tree/main/skillpack-arb
+```
+
+**skillpack-agent**
+```
 install the skillpack-agent skill from https://github.com/skillpackbot/SKILLPACK/tree/main/skillpack-agent
+```
+
+**skillpack-alpha**
+```
 install the skillpack-alpha skill from https://github.com/skillpackbot/SKILLPACK/tree/main/skillpack-alpha
+```
+
+**skillpack-auto**
+```
 install the skillpack-auto skill from https://github.com/skillpackbot/SKILLPACK/tree/main/skillpack-auto
+```
+
+**skillpack-portfolio**
+```
 install the skillpack-portfolio skill from https://github.com/skillpackbot/SKILLPACK/tree/main/skillpack-portfolio
+```
+
+**skillpack-x402**
+```
 install the skillpack-x402 skill from https://github.com/skillpackbot/SKILLPACK/tree/main/skillpack-x402
 ```
 
